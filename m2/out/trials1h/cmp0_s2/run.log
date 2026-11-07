@@ -1,0 +1,34 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2
+INFO: Loaded 1 modules   (52486 inline 8-bit counters): 52486 [0x6104aea8b0b8, 0x6104aea97dbe), 
+INFO: Loaded 1 PC tables (52486 PCs): 52486 [0x6104aea97dc0,0x6104aeb64e20), 
+INFO:        0 files found in out/trials1h/cmp0_s2/corpus
+INFO:      124 files found in ../m1/seeds
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 65542 bytes
+INFO: seed corpus: files: 124 min: 1b max: 65542b total: 70257b rss: 38Mb
+#125	INITED cov: 1085 ft: 1109 corp: 3/29b exec/s: 125 rss: 42Mb
+#148	REDUCE cov: 1085 ft: 1109 corp: 3/27b lim: 14 exec/s: 148 rss: 42Mb L: 12/14 MS: 3 ChangeByte-ShuffleBytes-CrossOver-
+#2048	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 29 exec/s: 1024 rss: 47Mb
+#4096	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 53 exec/s: 2048 rss: 48Mb
+#8192	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 92 exec/s: 2730 rss: 49Mb
+#16384	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 170 exec/s: 4096 rss: 50Mb
+#32768	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 333 exec/s: 4096 rss: 53Mb
+#65536	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 661 exec/s: 4369 rss: 58Mb
+#131072	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 1310 exec/s: 5957 rss: 68Mb
+#262144	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 2611 exec/s: 5957 rss: 89Mb
+#524288	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 5224 exec/s: 6241 rss: 130Mb
+#1048576	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 10449 exec/s: 6432 rss: 211Mb
+#2097152	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 20898 exec/s: 6944 rss: 376Mb
+#4194304	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 41785 exec/s: 7543 rss: 555Mb
+#8388608	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 65542 exec/s: 8490 rss: 556Mb
+#16777216	pulse  cov: 1085 ft: 1109 corp: 3/27b lim: 65542 exec/s: 9123 rss: 557Mb
+Slowest unit: 806 s:
+artifact_prefix='out/trials1h/cmp0_s2/crash/'; Test unit written to out/trials1h/cmp0_s2/crash/slow-unit-a242dec654068ec975f7d37a7b824715e15ab036
+Base64: OAEAAAAoBwUiP1x5lrPQ
+#17791113	DONE   cov: 1085 ft: 1109 corp: 3/27b lim: 65542 exec/s: 4172 rss: 557Mb
+Done 17791113 runs in 4265 second(s)
+stat::number_of_executed_units: 17791113
+stat::average_exec_per_sec:     4171
+stat::new_units_added:          1
+stat::slowest_unit_time_sec:    806
+stat::peak_rss_mb:              557
