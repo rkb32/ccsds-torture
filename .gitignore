@@ -1,0 +1,24 @@
+# Reproducers for open cFE issues (#2697, #2810). Keep out of the repo until disclosure is resolved.
+m0/
+m1/
+
+# Planning doc, not repo content.
+PLAN.md
+
+# Fuzzer working data and third-party checkouts.
+m2/fprime/
+m2/seeds_spd/
+m2/seeds_framed_ro/
+m2/out/**/corpus/
+m2/out/**/crash/
+m2/out/**/gcov/
+m2/out/trials*/**/corpus/
+m2/out/trials*/**/crash/
+m2/out/trials*/**/gcov/
+
+# Build artifacts (binaries, objects, coverage data).
+m2/out/**/fuzz_fprime
+m2/out/**/fuzz_spd
+m2/out/**/*.o
+m2/out/**/*.gcda
+m2/out/**/*.gcno

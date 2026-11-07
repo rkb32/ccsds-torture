@@ -1,0 +1,29 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2896271757
+INFO: Loaded 1 modules   (56349 inline 8-bit counters): 56349 [0x6352298fc938, 0x63522990a555), 
+INFO: Loaded 1 PC tables (56349 PCs): 56349 [0x63522990a558,0x6352299e6728), 
+INFO:      149 files found in seeds_spd
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 65542 bytes
+INFO: seed corpus: files: 149 min: 1b max: 65542b total: 70758b rss: 40Mb
+#150	INITED cov: 1655 ft: 1759 corp: 7/43b exec/s: 150 rss: 44Mb
+#4096	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 44 exec/s: 2048 rss: 50Mb
+#8192	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 88 exec/s: 4096 rss: 51Mb
+#16384	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 165 exec/s: 5461 rss: 52Mb
+#32768	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 328 exec/s: 6553 rss: 55Mb
+#65536	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 656 exec/s: 7281 rss: 59Mb
+#131072	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 1305 exec/s: 8192 rss: 70Mb
+#262144	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 2605 exec/s: 8192 rss: 89Mb
+#524288	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 5217 exec/s: 9198 rss: 128Mb
+#1048576	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 10442 exec/s: 9039 rss: 207Mb
+#2097152	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 20890 exec/s: 9320 rss: 364Mb
+#4194304	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 41791 exec/s: 10810 rss: 578Mb
+#8388608	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 65542 exec/s: 10433 rss: 579Mb
+#16777216	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 65542 exec/s: 10817 rss: 579Mb
+#33554432	pulse  cov: 1655 ft: 1759 corp: 7/43b lim: 65542 exec/s: 11440 rss: 579Mb
+#46090735	DONE   cov: 1655 ft: 1759 corp: 7/43b lim: 65542 exec/s: 12799 rss: 579Mb
+Done 46090735 runs in 3601 second(s)
+stat::number_of_executed_units: 46090735
+stat::average_exec_per_sec:     12799
+stat::new_units_added:          0
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              579

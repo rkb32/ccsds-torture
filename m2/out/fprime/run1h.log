@@ -1,0 +1,47 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3217939417
+INFO: Loaded 1 modules   (52466 inline 8-bit counters): 52466 [0x55ab99fe5f58, 0x55ab99ff2c4a), 
+INFO: Loaded 1 PC tables (52466 PCs): 52466 [0x55ab99ff2c50,0x55ab9a0bfb70), 
+INFO:      149 files found in seeds_spd
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 65542 bytes
+INFO: seed corpus: files: 149 min: 1b max: 65542b total: 70758b rss: 39Mb
+#150	INITED cov: 1412 ft: 2059 corp: 10/282b exec/s: 150 rss: 43Mb
+#8192	pulse  cov: 1412 ft: 2059 corp: 10/282b lim: 211 exec/s: 4096 rss: 51Mb
+#16384	pulse  cov: 1412 ft: 2059 corp: 10/282b lim: 292 exec/s: 5461 rss: 53Mb
+#32768	pulse  cov: 1412 ft: 2059 corp: 10/282b lim: 452 exec/s: 6553 rss: 56Mb
+#65536	pulse  cov: 1412 ft: 2059 corp: 10/282b lim: 777 exec/s: 8192 rss: 63Mb
+#75932	REDUCE cov: 1412 ft: 2059 corp: 10/281b lim: 885 exec/s: 8436 rss: 66Mb L: 15/134 MS: 2 EraseBytes-ChangeBinInt-
+#116789	REDUCE cov: 1412 ft: 2059 corp: 10/280b lim: 1289 exec/s: 9732 rss: 75Mb L: 14/134 MS: 2 EraseBytes-ChangeBit-
+#131072	pulse  cov: 1412 ft: 2059 corp: 10/280b lim: 1429 exec/s: 9362 rss: 78Mb
+#262144	pulse  cov: 1412 ft: 2059 corp: 10/280b lim: 2731 exec/s: 9709 rss: 106Mb
+#524288	pulse  cov: 1412 ft: 2059 corp: 10/280b lim: 5342 exec/s: 9892 rss: 163Mb
+#763800	REDUCE cov: 1412 ft: 2059 corp: 10/278b lim: 7730 exec/s: 9314 rss: 215Mb L: 40/134 MS: 5 ShuffleBytes-InsertByte-ShuffleBytes-ChangeBit-EraseBytes-
+#1048576	pulse  cov: 1412 ft: 2059 corp: 10/278b lim: 10564 exec/s: 9362 rss: 276Mb
+#1572487	REDUCE cov: 1412 ft: 2059 corp: 10/277b lim: 15777 exec/s: 10080 rss: 389Mb L: 23/134 MS: 2 ChangeBinInt-EraseBytes-
+#1793270	REDUCE cov: 1412 ft: 2059 corp: 10/275b lim: 17970 exec/s: 9339 rss: 437Mb L: 21/134 MS: 3 ChangeBinInt-ChangeByte-EraseBytes-
+#2097152	pulse  cov: 1412 ft: 2059 corp: 10/275b lim: 20994 exec/s: 9664 rss: 503Mb
+#2967885	REDUCE cov: 1412 ft: 2082 corp: 11/542b lim: 29674 exec/s: 10753 rss: 508Mb L: 267/267 MS: 4 InsertRepeatedBytes-ChangeBinInt-InsertRepeatedBytes-InsertRepeatedBytes-
+#4194304	pulse  cov: 1412 ft: 2082 corp: 11/542b lim: 41888 exec/s: 11683 rss: 521Mb
+	NEW_FUNC[1/13]: 0x55ab99a2e658 in Svc::FprimeDeframerComponentBase::getNum_dataOut_OutputPorts() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.hpp:298
+	NEW_FUNC[2/13]: 0x55ab99a37850 in Svc::FprimeDeframerComponentBase::dataOut_out(short, Fw::Buffer&, ComCfg::FrameContext const&) const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:552
+#4524541	REDUCE cov: 1529 ft: 2234 corp: 12/563b lim: 45188 exec/s: 11782 rss: 524Mb L: 21/267 MS: 1 CMP- DE: "\260\2028\273"-
+#4524542	NEW    cov: 1530 ft: 2235 corp: 13/575b lim: 45188 exec/s: 11813 rss: 524Mb L: 12/267 MS: 1 CopyPart-
+#4533534	REDUCE cov: 1531 ft: 2236 corp: 14/596b lim: 45263 exec/s: 11806 rss: 524Mb L: 21/267 MS: 2 PersAutoDict-ChangeBinInt- DE: "\260\2028\273"-
+#5391851	REDUCE cov: 1531 ft: 2236 corp: 14/594b lim: 53813 exec/s: 11303 rss: 532Mb L: 14/267 MS: 2 ChangeBinInt-EraseBytes-
+#8388608	pulse  cov: 1531 ft: 2236 corp: 14/594b lim: 65542 exec/s: 11538 rss: 535Mb
+#16578622	NEW    cov: 1531 ft: 2237 corp: 15/607b lim: 65542 exec/s: 12289 rss: 538Mb L: 13/267 MS: 1 ShuffleBytes-
+#16777216	pulse  cov: 1531 ft: 2237 corp: 15/607b lim: 65542 exec/s: 12282 rss: 538Mb
+#23374055	NEW    cov: 1531 ft: 2261 corp: 16/869b lim: 65542 exec/s: 11396 rss: 548Mb L: 262/267 MS: 3 InsertRepeatedBytes-InsertByte-InsertRepeatedBytes-
+#27019892	NEW    cov: 1531 ft: 2285 corp: 17/1132b lim: 65542 exec/s: 11712 rss: 548Mb L: 263/267 MS: 2 ChangeBit-InsertByte-
+#33541955	NEW    cov: 1531 ft: 2286 corp: 18/1396b lim: 65542 exec/s: 12130 rss: 548Mb L: 264/267 MS: 3 ChangeBinInt-InsertByte-ChangeBinInt-
+#33554432	pulse  cov: 1531 ft: 2286 corp: 18/1396b lim: 65542 exec/s: 12131 rss: 548Mb
+#50600330	DONE   cov: 1531 ft: 2286 corp: 18/1396b lim: 65542 exec/s: 14051 rss: 548Mb
+###### Recommended dictionary. ######
+"\260\2028\273" # Uses: 4294611
+###### End of recommended dictionary. ######
+Done 50600330 runs in 3601 second(s)
+stat::number_of_executed_units: 50600330
+stat::average_exec_per_sec:     14051
+stat::new_units_added:          14
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              548
