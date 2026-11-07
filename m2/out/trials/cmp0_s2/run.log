@@ -1,0 +1,29 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2
+INFO: Loaded 1 modules   (52486 inline 8-bit counters): 52486 [0x60d2410ed0b8, 0x60d2410f9dbe), 
+INFO: Loaded 1 PC tables (52486 PCs): 52486 [0x60d2410f9dc0,0x60d2411c6e20), 
+INFO:        0 files found in out/trials/cmp0_s2/corpus
+INFO:      124 files found in ../m1/seeds
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 65542 bytes
+INFO: seed corpus: files: 124 min: 1b max: 65542b total: 70257b rss: 39Mb
+#2	pulse  ft: 958 exec/s: 0 rss: 39Mb
+#125	INITED cov: 1082 ft: 1106 corp: 3/29b exec/s: 125 rss: 42Mb
+#148	REDUCE cov: 1082 ft: 1106 corp: 3/27b lim: 14 exec/s: 148 rss: 43Mb L: 12/14 MS: 3 ChangeByte-ShuffleBytes-CrossOver-
+#4096	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 53 exec/s: 2048 rss: 48Mb
+#8192	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 92 exec/s: 2730 rss: 49Mb
+#16384	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 170 exec/s: 3276 rss: 51Mb
+#32768	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 333 exec/s: 4096 rss: 53Mb
+#65536	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 661 exec/s: 4681 rss: 58Mb
+#131072	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 1310 exec/s: 5461 rss: 69Mb
+#262144	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 2611 exec/s: 6393 rss: 89Mb
+#524288	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 5224 exec/s: 5957 rss: 131Mb
+#1048576	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 10449 exec/s: 6765 rss: 212Mb
+#2097152	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 20898 exec/s: 6700 rss: 376Mb
+#4194304	pulse  cov: 1082 ft: 1106 corp: 3/27b lim: 41785 exec/s: 5991 rss: 555Mb
+#5387933	DONE   cov: 1082 ft: 1106 corp: 3/27b lim: 53680 exec/s: 5979 rss: 556Mb
+Done 5387933 runs in 901 second(s)
+stat::number_of_executed_units: 5387933
+stat::average_exec_per_sec:     5979
+stat::new_units_added:          1
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              556

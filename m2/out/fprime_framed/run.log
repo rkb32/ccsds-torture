@@ -1,0 +1,70 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3155997593
+INFO: Loaded 1 modules   (52486 inline 8-bit counters): 52486 [0x5fca408e70b8, 0x5fca408f3dbe), 
+INFO: Loaded 1 PC tables (52486 PCs): 52486 [0x5fca408f3dc0,0x5fca409c0e20), 
+INFO:        0 files found in out/fprime_framed/corpus
+INFO:      125 files found in seeds_framed_ro
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 125 min: 12b max: 524b total: 6199b rss: 39Mb
+#126	INITED cov: 1333 ft: 1408 corp: 6/118b exec/s: 126 rss: 42Mb
+	NEW_FUNC[1/13]: 0x5fca4032f698 in Svc::FprimeDeframerComponentBase::getNum_dataReturnOut_OutputPorts() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.hpp:305
+	NEW_FUNC[2/13]: 0x5fca40339540 in Svc::FprimeDeframerComponentBase::dataReturnOut_out(short, Fw::Buffer&, ComCfg::FrameContext const&) const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:574
+#127	NEW    cov: 1434 ft: 1561 corp: 7/135b lim: 38 exec/s: 127 rss: 43Mb L: 17/38 MS: 1 ChangeBit-
+	NEW_FUNC[1/2]: 0x5fca403416b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
+	NEW_FUNC[2/2]: 0x5fca403724f0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidChecksum() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:593
+#128	NEW    cov: 1467 ft: 1599 corp: 8/173b lim: 38 exec/s: 128 rss: 43Mb L: 38/38 MS: 1 ChangeByte-
+	NEW_FUNC[1/2]: 0x5fca40340200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
+	NEW_FUNC[2/2]: 0x5fca403721c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
+#133	NEW    cov: 1498 ft: 1635 corp: 9/211b lim: 38 exec/s: 133 rss: 43Mb L: 38/38 MS: 5 ChangeASCIIInt-ChangeBinInt-ChangeASCIIInt-ChangeBinInt-ChangeBit-
+#139	NEW    cov: 1500 ft: 2133 corp: 10/223b lim: 38 exec/s: 69 rss: 43Mb L: 12/38 MS: 1 ChangeBit-
+	NEW_FUNC[1/2]: 0x5fca4033a230 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidBufferReceived() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:598
+	NEW_FUNC[2/2]: 0x5fca40371b60 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidBufferReceived() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:572
+#153	NEW    cov: 1530 ft: 2186 corp: 11/230b lim: 38 exec/s: 76 rss: 43Mb L: 7/38 MS: 4 CrossOver-ShuffleBytes-ChangeBinInt-EraseBytes-
+#179	NEW    cov: 1530 ft: 2187 corp: 12/248b lim: 38 exec/s: 89 rss: 43Mb L: 18/38 MS: 1 ChangeByte-
+#256	pulse  cov: 1530 ft: 2187 corp: 12/248b lim: 38 exec/s: 128 rss: 44Mb
+#307	REDUCE cov: 1530 ft: 2187 corp: 12/246b lim: 38 exec/s: 153 rss: 45Mb L: 5/38 MS: 3 ChangeBit-ShuffleBytes-EraseBytes-
+#425	REDUCE cov: 1530 ft: 2187 corp: 12/243b lim: 38 exec/s: 212 rss: 46Mb L: 35/38 MS: 3 ChangeByte-ChangeBinInt-CrossOver-
+#436	REDUCE cov: 1530 ft: 2187 corp: 12/226b lim: 38 exec/s: 218 rss: 46Mb L: 18/38 MS: 1 EraseBytes-
+#439	REDUCE cov: 1530 ft: 2187 corp: 12/221b lim: 38 exec/s: 219 rss: 46Mb L: 12/38 MS: 3 EraseBytes-ChangeByte-CopyPart-
+#512	pulse  cov: 1530 ft: 2187 corp: 12/221b lim: 38 exec/s: 256 rss: 46Mb
+#536	REDUCE cov: 1530 ft: 2187 corp: 12/219b lim: 38 exec/s: 268 rss: 46Mb L: 3/38 MS: 2 InsertByte-EraseBytes-
+#744	REDUCE cov: 1530 ft: 2187 corp: 12/217b lim: 38 exec/s: 372 rss: 47Mb L: 16/38 MS: 3 ChangeByte-CopyPart-CrossOver-
+#826	NEW    cov: 1532 ft: 2191 corp: 13/235b lim: 38 exec/s: 413 rss: 47Mb L: 18/38 MS: 2 CopyPart-CrossOver-
+#1024	pulse  cov: 1532 ft: 2191 corp: 13/235b lim: 38 exec/s: 512 rss: 48Mb
+#1143	REDUCE cov: 1532 ft: 2191 corp: 13/234b lim: 38 exec/s: 571 rss: 48Mb L: 2/38 MS: 2 ShuffleBytes-EraseBytes-
+#1634	REDUCE cov: 1532 ft: 2191 corp: 13/233b lim: 38 exec/s: 817 rss: 49Mb L: 1/38 MS: 1 EraseBytes-
+#2048	pulse  cov: 1532 ft: 2191 corp: 13/233b lim: 38 exec/s: 682 rss: 49Mb
+#2461	REDUCE cov: 1532 ft: 2191 corp: 13/230b lim: 43 exec/s: 820 rss: 49Mb L: 13/38 MS: 2 ChangeByte-EraseBytes-
+#4096	pulse  cov: 1532 ft: 2191 corp: 13/230b lim: 58 exec/s: 1365 rss: 50Mb
+#8192	pulse  cov: 1532 ft: 2191 corp: 13/230b lim: 98 exec/s: 2730 rss: 51Mb
+#8642	REDUCE cov: 1532 ft: 2191 corp: 13/229b lim: 104 exec/s: 2160 rss: 51Mb L: 12/38 MS: 1 EraseBytes-
+#16384	pulse  cov: 1532 ft: 2191 corp: 13/229b lim: 177 exec/s: 3276 rss: 53Mb
+#32768	pulse  cov: 1532 ft: 2191 corp: 13/229b lim: 341 exec/s: 4681 rss: 56Mb
+#65536	pulse  cov: 1532 ft: 2191 corp: 13/229b lim: 661 exec/s: 5957 rss: 62Mb
+#114700	REDUCE cov: 1532 ft: 2191 corp: 13/214b lim: 1150 exec/s: 6372 rss: 71Mb L: 23/38 MS: 3 ChangeBinInt-EraseBytes-CMP- DE: "\001l"-
+#131072	pulse  cov: 1532 ft: 2191 corp: 13/214b lim: 1310 exec/s: 6553 rss: 73Mb
+#262144	pulse  cov: 1532 ft: 2191 corp: 13/214b lim: 2611 exec/s: 7281 rss: 96Mb
+#524288	pulse  cov: 1532 ft: 2191 corp: 13/214b lim: 4096 exec/s: 6721 rss: 141Mb
+#525289	NEW    cov: 1532 ft: 2215 corp: 14/355b lim: 4096 exec/s: 6734 rss: 141Mb L: 141/141 MS: 4 ShuffleBytes-InsertRepeatedBytes-ChangeBit-CrossOver-
+#1048576	pulse  cov: 1532 ft: 2215 corp: 14/355b lim: 4096 exec/s: 7598 rss: 238Mb
+#2097152	pulse  cov: 1532 ft: 2215 corp: 14/355b lim: 4096 exec/s: 8224 rss: 431Mb
+#3740552	NEW    cov: 1532 ft: 2238 corp: 15/622b lim: 4096 exec/s: 7466 rss: 525Mb L: 267/267 MS: 3 InsertRepeatedBytes-InsertRepeatedBytes-InsertRepeatedBytes-
+#4194304	pulse  cov: 1532 ft: 2238 corp: 15/622b lim: 4096 exec/s: 7410 rss: 525Mb
+#4369987	REDUCE cov: 1532 ft: 2238 corp: 15/620b lim: 4096 exec/s: 7381 rss: 525Mb L: 36/267 MS: 5 ChangeBinInt-ChangeASCIIInt-PersAutoDict-ChangeByte-EraseBytes- DE: "\001l"-
+#5461110	REDUCE cov: 1532 ft: 2238 corp: 15/616b lim: 4096 exec/s: 7574 rss: 525Mb L: 14/267 MS: 3 InsertByte-ChangeBit-EraseBytes-
+#8388608	pulse  cov: 1532 ft: 2238 corp: 15/616b lim: 4096 exec/s: 5928 rss: 526Mb
+#9164879	REDUCE cov: 1532 ft: 2238 corp: 15/614b lim: 4096 exec/s: 5859 rss: 526Mb L: 139/267 MS: 4 CMP-ChangeBinInt-InsertByte-EraseBytes- DE: "N10__cxxabiv117__class_type_infoE"-
+#14178314	REDUCE cov: 1532 ft: 2238 corp: 15/610b lim: 4096 exec/s: 5977 rss: 526Mb L: 135/267 MS: 5 EraseBytes-ChangeBit-InsertByte-InsertByte-InsertRepeatedBytes-
+#16777216	pulse  cov: 1532 ft: 2238 corp: 15/610b lim: 4096 exec/s: 6096 rss: 526Mb
+#20368569	NEW    cov: 1532 ft: 2262 corp: 16/873b lim: 4096 exec/s: 6570 rss: 526Mb L: 263/267 MS: 5 InsertRepeatedBytes-ChangeBinInt-ChangeByte-CopyPart-CopyPart-
+#27752619	DONE   cov: 1532 ft: 2262 corp: 16/873b lim: 4096 exec/s: 7706 rss: 527Mb
+###### Recommended dictionary. ######
+"\001l" # Uses: 1716924
+"N10__cxxabiv117__class_type_infoE" # Uses: 595327
+###### End of recommended dictionary. ######
+Done 27752619 runs in 3601 second(s)
+stat::number_of_executed_units: 27752619
+stat::average_exec_per_sec:     7706
+stat::new_units_added:          25
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              527

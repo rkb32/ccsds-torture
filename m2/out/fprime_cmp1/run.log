@@ -1,0 +1,58 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3155906845
+INFO: Loaded 1 modules   (52486 inline 8-bit counters): 52486 [0x615d00c480b8, 0x615d00c54dbe), 
+INFO: Loaded 1 PC tables (52486 PCs): 52486 [0x615d00c54dc0,0x615d00d21e20), 
+INFO:        0 files found in out/fprime_cmp1/corpus
+INFO:      124 files found in ../m1/seeds
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 65542 bytes
+INFO: seed corpus: files: 124 min: 1b max: 65542b total: 70257b rss: 39Mb
+#125	INITED cov: 1086 ft: 1110 corp: 3/29b exec/s: 125 rss: 43Mb
+#229	REDUCE cov: 1086 ft: 1110 corp: 3/27b lim: 14 exec/s: 229 rss: 44Mb L: 12/14 MS: 4 CrossOver-ChangeBit-CrossOver-EraseBytes-
+	NEW_FUNC[1/3]: 0x615d006a1200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
+	NEW_FUNC[2/3]: 0x615d006d31c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
+#564	NEW    cov: 1123 ft: 1152 corp: 4/39b lim: 17 exec/s: 564 rss: 47Mb L: 12/14 MS: 5 CrossOver-InsertRepeatedBytes-CMP-ChangeBit-CMP- DE: "\377\377|ud%\346p"-"\336\255\276\357"-
+#2048	pulse  cov: 1123 ft: 1152 corp: 4/39b lim: 29 exec/s: 1024 rss: 49Mb
+#4096	pulse  cov: 1123 ft: 1152 corp: 4/39b lim: 48 exec/s: 2048 rss: 50Mb
+#8192	pulse  cov: 1123 ft: 1152 corp: 4/39b lim: 92 exec/s: 2730 rss: 51Mb
+	NEW_FUNC[1/27]: 0x615d006a26b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
+	NEW_FUNC[2/27]: 0x615d006a3b60 in Svc::FprimeDeframerComponentBase::log_WARNING_LO_PayloadTooShort() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:858
+#11785	NEW    cov: 1375 ft: 1939 corp: 5/51b lim: 128 exec/s: 3928 rss: 51Mb L: 12/14 MS: 1 ChangeBinInt-
+#11846	NEW    cov: 1375 ft: 1940 corp: 6/63b lim: 128 exec/s: 3948 rss: 52Mb L: 12/14 MS: 1 ChangeByte-
+#16384	pulse  cov: 1375 ft: 1940 corp: 6/63b lim: 170 exec/s: 4096 rss: 52Mb
+	NEW_FUNC[1/2]: 0x615d00a4f810 in Fw::LinearBufferBase::deserializeTo(unsigned short&, Fw::Endianness) /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/Fw/Types/Serializable.cpp:343
+	NEW_FUNC[2/2]: 0x615d00a95fe0 in ComCfg::FrameContext::set_apid(ComCfg::Apid::T) /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/default/config/FrameContextSerializableAc.cpp:384
+#17849	NEW    cov: 1409 ft: 1984 corp: 7/77b lim: 184 exec/s: 4462 rss: 53Mb L: 14/14 MS: 3 CopyPart-InsertByte-ChangeBit-
+#18155	NEW    cov: 1409 ft: 1986 corp: 8/91b lim: 184 exec/s: 4538 rss: 53Mb L: 14/14 MS: 1 ChangeBit-
+#23316	NEW    cov: 1412 ft: 1989 corp: 9/105b lim: 233 exec/s: 5829 rss: 53Mb L: 14/14 MS: 1 CopyPart-
+#29974	NEW    cov: 1412 ft: 2013 corp: 10/216b lim: 293 exec/s: 5994 rss: 54Mb L: 111/111 MS: 3 InsertRepeatedBytes-ChangeBinInt-InsertByte-
+#32768	pulse  cov: 1412 ft: 2013 corp: 10/216b lim: 317 exec/s: 5461 rss: 55Mb
+#40854	NEW    cov: 1412 ft: 2037 corp: 11/241b lim: 397 exec/s: 5836 rss: 56Mb L: 25/111 MS: 5 ChangeByte-CrossOver-ChangeBinInt-CrossOver-CrossOver-
+#65536	pulse  cov: 1412 ft: 2037 corp: 11/241b lim: 634 exec/s: 6553 rss: 61Mb
+#131072	pulse  cov: 1412 ft: 2037 corp: 11/241b lim: 1290 exec/s: 7281 rss: 72Mb
+#224177	REDUCE cov: 1412 ft: 2037 corp: 11/240b lim: 2215 exec/s: 8006 rss: 87Mb L: 24/111 MS: 3 EraseBytes-ShuffleBytes-ChangeBit-
+#262144	pulse  cov: 1412 ft: 2037 corp: 11/240b lim: 2589 exec/s: 8192 rss: 94Mb
+#269447	NEW    cov: 1412 ft: 2061 corp: 12/425b lim: 2655 exec/s: 8165 rss: 95Mb L: 185/185 MS: 5 InsertRepeatedBytes-CrossOver-ShuffleBytes-CrossOver-CopyPart-
+#524288	pulse  cov: 1412 ft: 2061 corp: 12/425b lim: 5188 exec/s: 7598 rss: 142Mb
+#1048576	pulse  cov: 1412 ft: 2061 corp: 12/425b lim: 10410 exec/s: 8128 rss: 238Mb
+#1055826	REDUCE cov: 1412 ft: 2061 corp: 12/360b lim: 10475 exec/s: 8184 rss: 239Mb L: 46/185 MS: 4 InsertByte-CrossOver-ChangeBinInt-CrossOver-
+#1670860	REDUCE cov: 1412 ft: 2061 corp: 12/358b lim: 16600 exec/s: 8524 rss: 347Mb L: 22/185 MS: 4 ChangeBinInt-CopyPart-InsertByte-EraseBytes-
+#2097152	pulse  cov: 1412 ft: 2061 corp: 12/358b lim: 20842 exec/s: 8811 rss: 422Mb
+	NEW_FUNC[1/13]: 0x615d00690658 in Svc::FprimeDeframerComponentBase::getNum_dataOut_OutputPorts() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.hpp:298
+	NEW_FUNC[2/13]: 0x615d00699850 in Svc::FprimeDeframerComponentBase::dataOut_out(short, Fw::Buffer&, ComCfg::FrameContext const&) const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:552
+#3119736	NEW    cov: 1529 ft: 2195 corp: 13/370b lim: 31034 exec/s: 9425 rss: 524Mb L: 12/185 MS: 1 CMP- DE: "\332\215+\342"-
+#3122508	NEW    cov: 1529 ft: 2197 corp: 14/382b lim: 31048 exec/s: 9433 rss: 524Mb L: 12/185 MS: 2 PersAutoDict-ChangeByte- DE: "\332\215+\342"-
+#3177207	NEW    cov: 1529 ft: 2221 corp: 15/649b lim: 31580 exec/s: 9427 rss: 525Mb L: 267/267 MS: 4 InsertRepeatedBytes-PersAutoDict-InsertRepeatedBytes-CMP- DE: "\377\377|ud%\346p"-"\001\000\000\000\000\000\000\000"-
+#4194304	pulse  cov: 1529 ft: 2221 corp: 15/649b lim: 41710 exec/s: 8305 rss: 527Mb
+#6981292	DONE   cov: 1529 ft: 2221 corp: 15/649b lim: 65542 exec/s: 7748 rss: 528Mb
+###### Recommended dictionary. ######
+"\377\377|ud%\346p" # Uses: 235817
+"\336\255\276\357" # Uses: 240095
+"\332\215+\342" # Uses: 92163
+"\001\000\000\000\000\000\000\000" # Uses: 89039
+###### End of recommended dictionary. ######
+Done 6981292 runs in 901 second(s)
+stat::number_of_executed_units: 6981292
+stat::average_exec_per_sec:     7748
+stat::new_units_added:          16
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              528

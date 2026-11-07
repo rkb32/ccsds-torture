@@ -1,0 +1,57 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1
+INFO: Loaded 1 modules   (52486 inline 8-bit counters): 52486 [0x5a0eca78b0b8, 0x5a0eca797dbe), 
+INFO: Loaded 1 PC tables (52486 PCs): 52486 [0x5a0eca797dc0,0x5a0eca864e20), 
+INFO:        0 files found in out/trials/cmp1_s1/corpus
+INFO:      124 files found in ../m1/seeds
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 65542 bytes
+INFO: seed corpus: files: 124 min: 1b max: 65542b total: 70257b rss: 39Mb
+#2	pulse  ft: 958 exec/s: 0 rss: 39Mb
+#125	INITED cov: 1083 ft: 1107 corp: 3/29b exec/s: 125 rss: 42Mb
+#153	REDUCE cov: 1083 ft: 1107 corp: 3/27b lim: 14 exec/s: 153 rss: 42Mb L: 12/14 MS: 3 CrossOver-ChangeBit-InsertByte-
+#4096	pulse  cov: 1083 ft: 1107 corp: 3/27b lim: 48 exec/s: 2048 rss: 48Mb
+#8192	pulse  cov: 1083 ft: 1107 corp: 3/27b lim: 92 exec/s: 2730 rss: 49Mb
+	NEW_FUNC[1/3]: 0x5a0eca1e4200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
+	NEW_FUNC[2/3]: 0x5a0eca2161c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
+#8453	NEW    cov: 1120 ft: 1149 corp: 4/40b lim: 92 exec/s: 2817 rss: 50Mb L: 13/14 MS: 5 ChangeBit-EraseBytes-CrossOver-EraseBytes-CMP- DE: "\336\255\276\357"-
+#9701	REDUCE cov: 1120 ft: 1149 corp: 4/39b lim: 104 exec/s: 2425 rss: 50Mb L: 12/14 MS: 3 ChangeBit-CopyPart-EraseBytes-
+#16384	pulse  cov: 1120 ft: 1149 corp: 4/39b lim: 170 exec/s: 3276 rss: 51Mb
+#32768	pulse  cov: 1120 ft: 1149 corp: 4/39b lim: 333 exec/s: 3276 rss: 54Mb
+	NEW_FUNC[1/27]: 0x5a0eca1e56b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
+	NEW_FUNC[2/27]: 0x5a0eca1e6b60 in Svc::FprimeDeframerComponentBase::log_WARNING_LO_PayloadTooShort() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:858
+#47802	REDUCE cov: 1372 ft: 1933 corp: 5/51b lim: 477 exec/s: 3677 rss: 56Mb L: 12/14 MS: 1 ChangeBinInt-
+#48053	REDUCE cov: 1374 ft: 1936 corp: 6/63b lim: 477 exec/s: 3696 rss: 56Mb L: 12/14 MS: 1 CMP- DE: "\000\000\000\000"-
+	NEW_FUNC[1/2]: 0x5a0eca592810 in Fw::LinearBufferBase::deserializeTo(unsigned short&, Fw::Endianness) /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/Fw/Types/Serializable.cpp:343
+	NEW_FUNC[2/2]: 0x5a0eca5d8fe0 in ComCfg::FrameContext::set_apid(ComCfg::Apid::T) /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/default/config/FrameContextSerializableAc.cpp:384
+#63151	NEW    cov: 1406 ft: 2001 corp: 7/91b lim: 625 exec/s: 3946 rss: 59Mb L: 28/28 MS: 3 InsertByte-CrossOver-InsertByte-
+#65536	pulse  cov: 1406 ft: 2001 corp: 7/91b lim: 643 exec/s: 4096 rss: 59Mb
+#70972	NEW    cov: 1409 ft: 2004 corp: 8/119b lim: 697 exec/s: 4174 rss: 60Mb L: 28/28 MS: 1 ShuffleBytes-
+#71354	NEW    cov: 1410 ft: 2006 corp: 9/147b lim: 697 exec/s: 4197 rss: 60Mb L: 28/28 MS: 2 ChangeBit-CopyPart-
+#85778	NEW    cov: 1410 ft: 2030 corp: 10/183b lim: 832 exec/s: 4288 rss: 62Mb L: 36/36 MS: 4 PersAutoDict-ShuffleBytes-PersAutoDict-ChangeBit- DE: "\336\255\276\357"-"\000\000\000\000"-
+#99470	NEW    cov: 1411 ft: 2032 corp: 11/219b lim: 967 exec/s: 4324 rss: 65Mb L: 36/36 MS: 2 CrossOver-ChangeBinInt-
+#131072	pulse  cov: 1411 ft: 2032 corp: 11/219b lim: 1280 exec/s: 4854 rss: 70Mb
+#143417	NEW    cov: 1411 ft: 2056 corp: 12/358b lim: 1400 exec/s: 4945 rss: 72Mb L: 139/139 MS: 2 InsertRepeatedBytes-CrossOver-
+#262144	pulse  cov: 1411 ft: 2056 corp: 12/358b lim: 2578 exec/s: 5698 rss: 92Mb
+#524288	pulse  cov: 1411 ft: 2056 corp: 12/358b lim: 5188 exec/s: 5518 rss: 135Mb
+#657832	NEW    cov: 1411 ft: 2080 corp: 13/623b lim: 6520 exec/s: 5770 rss: 157Mb L: 265/265 MS: 5 InsertRepeatedBytes-PersAutoDict-ChangeByte-InsertRepeatedBytes-InsertRepeatedBytes- DE: "\000\000\000\000"-
+#779330	REDUCE cov: 1411 ft: 2080 corp: 13/615b lim: 7720 exec/s: 5859 rss: 179Mb L: 20/265 MS: 3 CrossOver-PersAutoDict-EraseBytes- DE: "\000\000\000\000"-
+#1036212	REDUCE cov: 1411 ft: 2080 corp: 13/611b lim: 10267 exec/s: 6204 rss: 225Mb L: 24/265 MS: 2 EraseBytes-CopyPart-
+#1048576	pulse  cov: 1411 ft: 2080 corp: 13/611b lim: 10384 exec/s: 6241 rss: 227Mb
+#1337652	REDUCE cov: 1411 ft: 2080 corp: 13/603b lim: 13257 exec/s: 6493 rss: 278Mb L: 20/265 MS: 5 ShuffleBytes-CrossOver-CrossOver-EraseBytes-CrossOver-
+#1469650	REDUCE cov: 1411 ft: 2080 corp: 13/595b lim: 14570 exec/s: 6474 rss: 301Mb L: 16/265 MS: 3 ChangeBinInt-ChangeByte-EraseBytes-
+#1720094	REDUCE cov: 1411 ft: 2080 corp: 13/590b lim: 17062 exec/s: 6370 rss: 345Mb L: 15/265 MS: 4 CopyPart-EraseBytes-ChangeBit-ChangeBinInt-
+#2097152	pulse  cov: 1411 ft: 2080 corp: 13/590b lim: 20814 exec/s: 6297 rss: 411Mb
+#2915743	REDUCE cov: 1411 ft: 2080 corp: 13/589b lim: 28962 exec/s: 5470 rss: 526Mb L: 14/265 MS: 4 ChangeBit-EraseBytes-ChangeBinInt-CopyPart-
+#3412492	REDUCE cov: 1411 ft: 2080 corp: 13/587b lim: 33910 exec/s: 5539 rss: 532Mb L: 14/265 MS: 4 ChangeBinInt-CopyPart-ChangeBit-EraseBytes-
+#4194304	pulse  cov: 1411 ft: 2080 corp: 13/587b lim: 41695 exec/s: 5622 rss: 532Mb
+#5101372	DONE   cov: 1411 ft: 2080 corp: 13/587b lim: 50740 exec/s: 5661 rss: 532Mb
+###### Recommended dictionary. ######
+"\336\255\276\357" # Uses: 237736
+"\000\000\000\000" # Uses: 233796
+###### End of recommended dictionary. ######
+Done 5101372 runs in 901 second(s)
+stat::number_of_executed_units: 5101372
+stat::average_exec_per_sec:     5661
+stat::new_units_added:          19
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              532
