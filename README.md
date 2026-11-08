@@ -3,9 +3,9 @@
 Robustness and fuzzing tests for CCSDS Space Packet parsers.
 
 ## Status
-- **F´ (done so far):** libFuzzer harnesses for `SpacePacketDeframer` and `FprimeDeframer`, built with ASan and UBSan. Oracle: sanitizers and aborts only. F´ asserts are out of scope (F´ #5923). Short runs found no crashes. Results: `m2/RESULTS.md`.
-- **cFE (held):** not in this repo. Work pending coordinated disclosure.
-- **Regression tests:** none yet.
+- **F´ (done so far):** libFuzzer harnesses for `SpacePacketDeframer` and `FprimeDeframer`, built with ASan and UBSan. Oracle: sanitizers and aborts only. F´ asserts are out of scope (F´ #5923). Runs of up to one hour found no crashes. Results: `m2/RESULTS.md`.
+- **Scope:** F´ only. cFE is not covered in this repo.
+- **Regression tests:** `m2/tests/regress.py` (probe and fuzz smoke checks).
 
 ## Layout
 - `m2/harness/`: F´ harnesses.

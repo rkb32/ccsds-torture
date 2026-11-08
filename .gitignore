@@ -1,4 +1,4 @@
-# Reproducers for open cFE issues (#2697, #2810). Keep out of the repo until disclosure is resolved.
+# Local-only work folders and planning files. Not part of this repo.
 m0/
 m1/
 
@@ -22,3 +22,8 @@ m2/out/**/fuzz_spd
 m2/out/**/*.o
 m2/out/**/*.gcda
 m2/out/**/*.gcno
+
+# Local debug logs (untracked).
+m2/out/fprime/build_replay.log
+m2/out/fprime/debug_one.log
+m2/out/fprime/ninja_objects.log
