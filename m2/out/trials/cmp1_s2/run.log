@@ -15,17 +15,17 @@ INFO: seed corpus: files: 124 min: 1b max: 65542b total: 70257b rss: 38Mb
 #16384	pulse  cov: 1083 ft: 1107 corp: 3/27b lim: 170 exec/s: 3276 rss: 51Mb
 #32768	pulse  cov: 1083 ft: 1107 corp: 3/27b lim: 333 exec/s: 3640 rss: 53Mb
 #65536	pulse  cov: 1083 ft: 1107 corp: 3/27b lim: 661 exec/s: 4369 rss: 58Mb
-	NEW_FUNC[1/3]: 0x5c5a72ad8200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
-	NEW_FUNC[2/3]: 0x5c5a72b0a1c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
+	NEW_FUNC[1/3]: 0x5c5a72ad8200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
+	NEW_FUNC[2/3]: 0x5c5a72b0a1c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
 #127335	REDUCE cov: 1120 ft: 1149 corp: 4/42b lim: 1270 exec/s: 5093 rss: 69Mb L: 15/15 MS: 4 InsertByte-EraseBytes-CMP-CopyPart- DE: "\336\255\276\357"-
 #127854	REDUCE cov: 1120 ft: 1149 corp: 4/39b lim: 1270 exec/s: 4917 rss: 69Mb L: 12/14 MS: 4 ChangeBinInt-ShuffleBytes-ChangeBit-EraseBytes-
 #131072	pulse  cov: 1120 ft: 1149 corp: 4/39b lim: 1300 exec/s: 5041 rss: 70Mb
-	NEW_FUNC[1/27]: 0x5c5a72ad96b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
-	NEW_FUNC[2/27]: 0x5c5a72adab60 in Svc::FprimeDeframerComponentBase::log_WARNING_LO_PayloadTooShort() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:858
+	NEW_FUNC[1/27]: 0x5c5a72ad96b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
+	NEW_FUNC[2/27]: 0x5c5a72adab60 in Svc::FprimeDeframerComponentBase::log_WARNING_LO_PayloadTooShort() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:858
 #179287	REDUCE cov: 1371 ft: 1934 corp: 5/51b lim: 1780 exec/s: 5783 rss: 77Mb L: 12/14 MS: 2 CMP-CopyPart- DE: "l\000\000\000\000\000\000\000"-
 #179288	NEW    cov: 1373 ft: 1937 corp: 6/63b lim: 1780 exec/s: 5783 rss: 77Mb L: 12/14 MS: 1 ChangeBinInt-
-	NEW_FUNC[1/2]: 0x5c5a72e86810 in Fw::LinearBufferBase::deserializeTo(unsigned short&, Fw::Endianness) /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/Fw/Types/Serializable.cpp:343
-	NEW_FUNC[2/2]: 0x5c5a72eccfe0 in ComCfg::FrameContext::set_apid(ComCfg::Apid::T) /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/default/config/FrameContextSerializableAc.cpp:384
+	NEW_FUNC[1/2]: 0x5c5a72e86810 in Fw::LinearBufferBase::deserializeTo(unsigned short&, Fw::Endianness) $HOME/Desktop/ccsds-torture/m2/fprime/Fw/Types/Serializable.cpp:343
+	NEW_FUNC[2/2]: 0x5c5a72eccfe0 in ComCfg::FrameContext::set_apid(ComCfg::Apid::T) $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/default/config/FrameContextSerializableAc.cpp:384
 #196528	NEW    cov: 1407 ft: 2004 corp: 7/103b lim: 1950 exec/s: 5780 rss: 80Mb L: 40/40 MS: 5 InsertByte-InsertRepeatedBytes-EraseBytes-ChangeByte-EraseBytes-
 #196959	NEW    cov: 1412 ft: 2009 corp: 8/143b lim: 1950 exec/s: 5792 rss: 80Mb L: 40/40 MS: 1 CMP- DE: "\001\001"-
 #196966	NEW    cov: 1413 ft: 2011 corp: 9/183b lim: 1950 exec/s: 5793 rss: 80Mb L: 40/40 MS: 2 ChangeByte-PersAutoDict- DE: "l\000\000\000\000\000\000\000"-

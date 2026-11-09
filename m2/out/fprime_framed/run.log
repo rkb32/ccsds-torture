@@ -7,18 +7,18 @@ INFO:      125 files found in seeds_framed_ro
 INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
 INFO: seed corpus: files: 125 min: 12b max: 524b total: 6199b rss: 39Mb
 #126	INITED cov: 1333 ft: 1408 corp: 6/118b exec/s: 126 rss: 42Mb
-	NEW_FUNC[1/13]: 0x5fca4032f698 in Svc::FprimeDeframerComponentBase::getNum_dataReturnOut_OutputPorts() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.hpp:305
-	NEW_FUNC[2/13]: 0x5fca40339540 in Svc::FprimeDeframerComponentBase::dataReturnOut_out(short, Fw::Buffer&, ComCfg::FrameContext const&) const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:574
+	NEW_FUNC[1/13]: 0x5fca4032f698 in Svc::FprimeDeframerComponentBase::getNum_dataReturnOut_OutputPorts() $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.hpp:305
+	NEW_FUNC[2/13]: 0x5fca40339540 in Svc::FprimeDeframerComponentBase::dataReturnOut_out(short, Fw::Buffer&, ComCfg::FrameContext const&) const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:574
 #127	NEW    cov: 1434 ft: 1561 corp: 7/135b lim: 38 exec/s: 127 rss: 43Mb L: 17/38 MS: 1 ChangeBit-
-	NEW_FUNC[1/2]: 0x5fca403416b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
-	NEW_FUNC[2/2]: 0x5fca403724f0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidChecksum() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:593
+	NEW_FUNC[1/2]: 0x5fca403416b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
+	NEW_FUNC[2/2]: 0x5fca403724f0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidChecksum() $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:593
 #128	NEW    cov: 1467 ft: 1599 corp: 8/173b lim: 38 exec/s: 128 rss: 43Mb L: 38/38 MS: 1 ChangeByte-
-	NEW_FUNC[1/2]: 0x5fca40340200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
-	NEW_FUNC[2/2]: 0x5fca403721c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
+	NEW_FUNC[1/2]: 0x5fca40340200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
+	NEW_FUNC[2/2]: 0x5fca403721c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
 #133	NEW    cov: 1498 ft: 1635 corp: 9/211b lim: 38 exec/s: 133 rss: 43Mb L: 38/38 MS: 5 ChangeASCIIInt-ChangeBinInt-ChangeASCIIInt-ChangeBinInt-ChangeBit-
 #139	NEW    cov: 1500 ft: 2133 corp: 10/223b lim: 38 exec/s: 69 rss: 43Mb L: 12/38 MS: 1 ChangeBit-
-	NEW_FUNC[1/2]: 0x5fca4033a230 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidBufferReceived() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:598
-	NEW_FUNC[2/2]: 0x5fca40371b60 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidBufferReceived() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:572
+	NEW_FUNC[1/2]: 0x5fca4033a230 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidBufferReceived() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:598
+	NEW_FUNC[2/2]: 0x5fca40371b60 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidBufferReceived() $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:572
 #153	NEW    cov: 1530 ft: 2186 corp: 11/230b lim: 38 exec/s: 76 rss: 43Mb L: 7/38 MS: 4 CrossOver-ShuffleBytes-ChangeBinInt-EraseBytes-
 #179	NEW    cov: 1530 ft: 2187 corp: 12/248b lim: 38 exec/s: 89 rss: 43Mb L: 18/38 MS: 1 ChangeByte-
 #256	pulse  cov: 1530 ft: 2187 corp: 12/248b lim: 38 exec/s: 128 rss: 44Mb

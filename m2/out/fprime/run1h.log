@@ -22,8 +22,8 @@ INFO: seed corpus: files: 149 min: 1b max: 65542b total: 70758b rss: 39Mb
 #2097152	pulse  cov: 1412 ft: 2059 corp: 10/275b lim: 20994 exec/s: 9664 rss: 503Mb
 #2967885	REDUCE cov: 1412 ft: 2082 corp: 11/542b lim: 29674 exec/s: 10753 rss: 508Mb L: 267/267 MS: 4 InsertRepeatedBytes-ChangeBinInt-InsertRepeatedBytes-InsertRepeatedBytes-
 #4194304	pulse  cov: 1412 ft: 2082 corp: 11/542b lim: 41888 exec/s: 11683 rss: 521Mb
-	NEW_FUNC[1/13]: 0x55ab99a2e658 in Svc::FprimeDeframerComponentBase::getNum_dataOut_OutputPorts() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.hpp:298
-	NEW_FUNC[2/13]: 0x55ab99a37850 in Svc::FprimeDeframerComponentBase::dataOut_out(short, Fw::Buffer&, ComCfg::FrameContext const&) const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:552
+	NEW_FUNC[1/13]: 0x55ab99a2e658 in Svc::FprimeDeframerComponentBase::getNum_dataOut_OutputPorts() $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.hpp:298
+	NEW_FUNC[2/13]: 0x55ab99a37850 in Svc::FprimeDeframerComponentBase::dataOut_out(short, Fw::Buffer&, ComCfg::FrameContext const&) const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:552
 #4524541	REDUCE cov: 1529 ft: 2234 corp: 12/563b lim: 45188 exec/s: 11782 rss: 524Mb L: 21/267 MS: 1 CMP- DE: "\260\2028\273"-
 #4524542	NEW    cov: 1530 ft: 2235 corp: 13/575b lim: 45188 exec/s: 11813 rss: 524Mb L: 12/267 MS: 1 CopyPart-
 #4533534	REDUCE cov: 1531 ft: 2236 corp: 14/596b lim: 45263 exec/s: 11806 rss: 524Mb L: 21/267 MS: 2 PersAutoDict-ChangeBinInt- DE: "\260\2028\273"-

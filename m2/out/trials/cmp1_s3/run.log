@@ -8,22 +8,22 @@ INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 6
 INFO: seed corpus: files: 124 min: 1b max: 65542b total: 70257b rss: 39Mb
 #125	INITED cov: 1084 ft: 1108 corp: 3/29b exec/s: 125 rss: 42Mb
 #139	REDUCE cov: 1084 ft: 1108 corp: 3/27b lim: 14 exec/s: 139 rss: 43Mb L: 12/14 MS: 4 ChangeByte-ChangeBit-ChangeByte-EraseBytes-
-	NEW_FUNC[1/3]: 0x6314acef9200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
-	NEW_FUNC[2/3]: 0x6314acf2b1c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
+	NEW_FUNC[1/3]: 0x6314acef9200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
+	NEW_FUNC[2/3]: 0x6314acf2b1c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
 #3129	REDUCE cov: 1121 ft: 1150 corp: 4/51b lim: 43 exec/s: 1043 rss: 49Mb L: 24/24 MS: 5 CrossOver-InsertRepeatedBytes-EraseBytes-CrossOver-CMP- DE: "\336\255\276\357"-
 #3415	REDUCE cov: 1121 ft: 1150 corp: 4/41b lim: 43 exec/s: 853 rss: 49Mb L: 14/14 MS: 1 EraseBytes-
 #4096	pulse  cov: 1121 ft: 1150 corp: 4/41b lim: 48 exec/s: 1024 rss: 50Mb
 #4611	REDUCE cov: 1121 ft: 1150 corp: 4/40b lim: 53 exec/s: 1152 rss: 50Mb L: 13/14 MS: 1 EraseBytes-
-	NEW_FUNC[1/27]: 0x6314acefa6b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
-	NEW_FUNC[2/27]: 0x6314acefbb60 in Svc::FprimeDeframerComponentBase::log_WARNING_LO_PayloadTooShort() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:858
+	NEW_FUNC[1/27]: 0x6314acefa6b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
+	NEW_FUNC[2/27]: 0x6314acefbb60 in Svc::FprimeDeframerComponentBase::log_WARNING_LO_PayloadTooShort() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:858
 #4872	REDUCE cov: 1374 ft: 1935 corp: 5/53b lim: 53 exec/s: 1218 rss: 50Mb L: 13/14 MS: 1 ChangeBinInt-
 #5153	NEW    cov: 1375 ft: 1936 corp: 6/66b lim: 53 exec/s: 1288 rss: 50Mb L: 13/14 MS: 1 ChangeBinInt-
 #5286	REDUCE cov: 1375 ft: 1936 corp: 6/65b lim: 53 exec/s: 1321 rss: 50Mb L: 12/14 MS: 3 ShuffleBytes-CopyPart-EraseBytes-
 #7969	REDUCE cov: 1375 ft: 1936 corp: 6/64b lim: 74 exec/s: 1593 rss: 51Mb L: 12/14 MS: 3 EraseBytes-CopyPart-InsertByte-
 #8192	pulse  cov: 1375 ft: 1936 corp: 6/64b lim: 74 exec/s: 1638 rss: 51Mb
 #16384	pulse  cov: 1375 ft: 1936 corp: 6/64b lim: 156 exec/s: 2730 rss: 52Mb
-	NEW_FUNC[1/2]: 0x6314ad2a7810 in Fw::LinearBufferBase::deserializeTo(unsigned short&, Fw::Endianness) /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/Fw/Types/Serializable.cpp:343
-	NEW_FUNC[2/2]: 0x6314ad2edfe0 in ComCfg::FrameContext::set_apid(ComCfg::Apid::T) /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/default/config/FrameContextSerializableAc.cpp:384
+	NEW_FUNC[1/2]: 0x6314ad2a7810 in Fw::LinearBufferBase::deserializeTo(unsigned short&, Fw::Endianness) $HOME/Desktop/ccsds-torture/m2/fprime/Fw/Types/Serializable.cpp:343
+	NEW_FUNC[2/2]: 0x6314ad2edfe0 in ComCfg::FrameContext::set_apid(ComCfg::Apid::T) $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/default/config/FrameContextSerializableAc.cpp:384
 #21447	REDUCE cov: 1406 ft: 2000 corp: 7/171b lim: 205 exec/s: 3063 rss: 53Mb L: 107/107 MS: 3 InsertRepeatedBytes-CrossOver-CrossOver-
 #26637	NEW    cov: 1409 ft: 2003 corp: 8/278b lim: 254 exec/s: 3329 rss: 53Mb L: 107/107 MS: 5 CMP-ChangeByte-CrossOver-ChangeBinInt-ChangeBinInt- DE: "\000\000\000\000\000\000\000\000"-
 #30040	REDUCE cov: 1409 ft: 2027 corp: 9/298b lim: 285 exec/s: 3337 rss: 54Mb L: 20/107 MS: 3 InsertByte-InsertRepeatedBytes-ChangeBit-

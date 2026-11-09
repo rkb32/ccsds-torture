@@ -20,7 +20,6 @@ No crashes, so nothing to classify. No F' `FW_ASSERT` fired in either run.
 - FPD (`FprimeDeframer.cpp`): asserts at lines 44, 72, 84, 86. Out of scope per F' #5923. None fired.
 - FPD start word is `0xdeadbeef` (`Svc/FprimeProtocol/FprimeProtocol.fpp:11`).
 
-## Open questions
 ## Follow-up (2026-11-07, after Opus review)
 1. **Input that reached line 110 (verified).** A replay probe (`CT_REPLAY=1`, `harness/fuzz_fprime.cpp`) over `seeds_spd` finds one hit out of 162: `seeds_spd/097768a382579186df70cf9b8544d24d7842042f` (21 bytes). It was written about six minutes into the FPD run. Its CRC trailer `b0 82 38 bb` equals the run's recommended dictionary entry (`\260\2028\273`, "Uses: 4294611"). So the valid CRC came from libFuzzer's comparison-derived dictionary, not from chance. Mechanism: verified by file contents; the dictionary-to-compare link is inferred.
 2. **Start word (partly verified; counts corrected 2026-11-07).** 20 files in `seeds_spd` start with `DE AD BE EF`. By mtime, 6 predate the 1h run (16:22:29–16:22:56; run start ≈16:23:16, inferred from log end 17:23:17 minus 3600 s) and 14 are later. The earlier "8 pre-run / 12 during-run" counts were wrong. The 6 pre-run files match the FPD smoke run. `out/fprime/smoke.log` (31 s, 13 new units) was last written at 16:22:57, right after the last of them. Verified: timing and log. Inferred: the smoke run wrote into `seeds_spd`; its log doesn't name the corpus dir. The 14 later files are from the 1h FPD run: the SPD 1h run had 0 new units, so it wrote nothing (verified, `out/spd/run1h.log`).
@@ -95,6 +94,13 @@ Six 3600 s runs, unframed seeds (`../m1/seeds`), seeds 1–3 per arm. Script: `t
 - **Verified:** `-help=1` on both binaries: `use_value_profile` default 0, `reduce_inputs` default 1.
 - **Verified:** reduce explains "files < new units". With reduce off, files equal units.
 - **Verified:** value profile gives no coverage gain in 120 s. It ran about 16x fewer execs. Not a fair speed comparison, but it doesn't break the plateau.
+
+## Research follow-ups (2026-11-08, Haiku 5.5; Opus 5.5 decision check)
+- **SPD plateau (coverage verified, cause inferred).** gcov on `SpacePacketDeframer.cpp`, counts cumulative across all runs linked to this build: 55 of 61 lines executed (90.2%). Never executed: the destructor (line 21) and the deserialize-failure branch (lines 66–72). Line 54 guarantees size > 6, so the header deserialize should not fail. That branch is likely unreachable (deserializer behavior not checked). The flat 1655 is saturation of reachable code, not a mutator gap.
+- **Stall (events verified, cause inferred).** Three 1 h runs (cmp0_s1, cmp0_s2, cmp1_s1) reported ~4265 s against a 3600 s budget. Windows logged modern-standby enter/exit pairs inside the run window (IDs 506/507 at 14:32:04–14:32:26 and 15:29:11–15:29:16; ID meanings unverified). Consistent with host sleep; not proven.
+- **Start-word origin (partly verified).** `out/fprime/smoke.log` reports "140 files found in seeds_spd" (verified). That new units were written there depends on it being the first corpus argument (unverified).
+- **Valid-frame reproducibility (not re-run).** Opus gate: more runs only if coverage does not explain the rarity. FprimeDeframer coverage not checked yet. Likely cause: the CRC-32 gate, so a hit depends on CMP learning the checksum (inferred).
+- **Public prep.** Username paths replaced with `$HOME` in 13 tracked logs (84 matches before, 0 after; verified by grep). Not committed.
 
 ## Limits
 - SPD coverage was flat at 1655 from exec 150 to 46M. The mutator adds no new branches, so either the seeds already cover them or most inputs stop at early checks. Medium confidence. A 2-min value-profile test gave no gain (see Checks). Cause still untested.

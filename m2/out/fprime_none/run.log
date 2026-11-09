@@ -9,14 +9,14 @@ INFO: seed corpus: files: 124 min: 1b max: 65542b total: 70257b rss: 39Mb
 #125	INITED cov: 1084 ft: 1110 corp: 3/29b exec/s: 125 rss: 43Mb
 #167	REDUCE cov: 1084 ft: 1110 corp: 3/28b lim: 14 exec/s: 167 rss: 44Mb L: 13/14 MS: 2 ShuffleBytes-CrossOver-
 #169	REDUCE cov: 1084 ft: 1110 corp: 3/27b lim: 14 exec/s: 169 rss: 44Mb L: 12/14 MS: 2 ChangeBit-EraseBytes-
-	NEW_FUNC[1/3]: 0x5ae912add200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
-	NEW_FUNC[2/3]: 0x5ae912b0f1c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
+	NEW_FUNC[1/3]: 0x5ae912add200 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidLengthReceived() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:728
+	NEW_FUNC[2/3]: 0x5ae912b0f1c0 in Svc::FprimeDeframerTesterBase::logIn_WARNING_HI_InvalidLengthReceived() $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerTesterBase.cpp:586
 #2659	REDUCE cov: 1121 ft: 1152 corp: 4/44b lim: 38 exec/s: 2659 rss: 49Mb L: 17/17 MS: 5 InsertByte-CMP-ChangeBinInt-ChangeBinInt-CMP- DE: "\000\000\000\000"-"\336\255\276\357"-
 #3125	REDUCE cov: 1121 ft: 1152 corp: 4/41b lim: 38 exec/s: 1562 rss: 50Mb L: 14/14 MS: 5 PersAutoDict-PersAutoDict-PersAutoDict-EraseBytes-PersAutoDict- DE: "\000\000\000\000"-"\336\255\276\357"-"\000\000\000\000"-"\000\000\000\000"-
 #3163	REDUCE cov: 1121 ft: 1152 corp: 4/40b lim: 38 exec/s: 1581 rss: 50Mb L: 13/14 MS: 3 EraseBytes-InsertByte-CopyPart-
 #4096	pulse  cov: 1121 ft: 1152 corp: 4/40b lim: 43 exec/s: 2048 rss: 50Mb
-	NEW_FUNC[1/27]: 0x5ae912ade6b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
-	NEW_FUNC[2/27]: 0x5ae912adfb60 in Svc::FprimeDeframerComponentBase::log_WARNING_LO_PayloadTooShort() const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:858
+	NEW_FUNC[1/27]: 0x5ae912ade6b0 in Svc::FprimeDeframerComponentBase::log_WARNING_HI_InvalidChecksum() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:793
+	NEW_FUNC[2/27]: 0x5ae912adfb60 in Svc::FprimeDeframerComponentBase::log_WARNING_LO_PayloadTooShort() const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:858
 #5344	REDUCE cov: 1372 ft: 1937 corp: 5/52b lim: 58 exec/s: 2672 rss: 51Mb L: 12/14 MS: 1 EraseBytes-
 #5410	NEW    cov: 1374 ft: 1939 corp: 6/64b lim: 58 exec/s: 2705 rss: 51Mb L: 12/14 MS: 1 CrossOver-
 #8192	pulse  cov: 1374 ft: 1939 corp: 6/64b lim: 80 exec/s: 2730 rss: 51Mb
@@ -25,8 +25,8 @@ INFO: seed corpus: files: 124 min: 1b max: 65542b total: 70257b rss: 39Mb
 #32768	pulse  cov: 1374 ft: 1939 corp: 6/63b lim: 325 exec/s: 5461 rss: 55Mb
 #37144	NEW    cov: 1374 ft: 1940 corp: 7/76b lim: 365 exec/s: 6190 rss: 56Mb L: 13/14 MS: 2 ChangeBit-InsertByte-
 #65536	pulse  cov: 1374 ft: 1940 corp: 7/76b lim: 643 exec/s: 7281 rss: 60Mb
-	NEW_FUNC[1/2]: 0x5ae912e8b810 in Fw::LinearBufferBase::deserializeTo(unsigned short&, Fw::Endianness) /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/Fw/Types/Serializable.cpp:343
-	NEW_FUNC[2/2]: 0x5ae912ed1fe0 in ComCfg::FrameContext::set_apid(ComCfg::Apid::T) /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/default/config/FrameContextSerializableAc.cpp:384
+	NEW_FUNC[1/2]: 0x5ae912e8b810 in Fw::LinearBufferBase::deserializeTo(unsigned short&, Fw::Endianness) $HOME/Desktop/ccsds-torture/m2/fprime/Fw/Types/Serializable.cpp:343
+	NEW_FUNC[2/2]: 0x5ae912ed1fe0 in ComCfg::FrameContext::set_apid(ComCfg::Apid::T) $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/default/config/FrameContextSerializableAc.cpp:384
 #78413	NEW    cov: 1408 ft: 2007 corp: 8/113b lim: 769 exec/s: 7128 rss: 62Mb L: 37/37 MS: 4 CrossOver-ChangeBinInt-ChangeBit-CrossOver-
 #78670	NEW    cov: 1408 ft: 2009 corp: 9/127b lim: 769 exec/s: 7151 rss: 62Mb L: 14/37 MS: 2 InsertByte-ChangeBinInt-
 #79327	NEW    cov: 1411 ft: 2012 corp: 10/141b lim: 769 exec/s: 7211 rss: 62Mb L: 14/37 MS: 2 ChangeBit-ShuffleBytes-
@@ -39,8 +39,8 @@ INFO: seed corpus: files: 124 min: 1b max: 65542b total: 70257b rss: 39Mb
 #957995	REDUCE cov: 1411 ft: 2060 corp: 12/293b lim: 9487 exec/s: 8118 rss: 214Mb L: 21/132 MS: 4 EraseBytes-ChangeBit-ChangeByte-EraseBytes-
 #1048576	pulse  cov: 1411 ft: 2060 corp: 12/293b lim: 10384 exec/s: 8256 rss: 230Mb
 #1694915	REDUCE cov: 1411 ft: 2060 corp: 12/292b lim: 16824 exec/s: 8736 rss: 341Mb L: 20/132 MS: 5 ChangeBit-ChangeBinInt-CrossOver-EraseBytes-InsertByte-
-	NEW_FUNC[1/13]: 0x5ae912acc658 in Svc::FprimeDeframerComponentBase::getNum_dataOut_OutputPorts() /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.hpp:298
-	NEW_FUNC[2/13]: 0x5ae912ad5850 in Svc::FprimeDeframerComponentBase::dataOut_out(short, Fw::Buffer&, ComCfg::FrameContext const&) const /mnt/c/Users/ranje/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:552
+	NEW_FUNC[1/13]: 0x5ae912acc658 in Svc::FprimeDeframerComponentBase::getNum_dataOut_OutputPorts() $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.hpp:298
+	NEW_FUNC[2/13]: 0x5ae912ad5850 in Svc::FprimeDeframerComponentBase::dataOut_out(short, Fw::Buffer&, ComCfg::FrameContext const&) const $HOME/Desktop/ccsds-torture/m2/fprime/build-fuzz/F-Prime/Svc/FprimeDeframer/FprimeDeframerComponentAc.cpp:552
 #2023626	NEW    cov: 1528 ft: 2193 corp: 13/304b lim: 20086 exec/s: 8954 rss: 398Mb L: 12/132 MS: 1 CMP- DE: "\332\215+\342"-
 #2023627	NEW    cov: 1529 ft: 2194 corp: 14/420b lim: 20086 exec/s: 8954 rss: 398Mb L: 116/132 MS: 1 InsertRepeatedBytes-
 #2028069	NEW    cov: 1530 ft: 2195 corp: 15/432b lim: 20128 exec/s: 8934 rss: 398Mb L: 12/132 MS: 2 PersAutoDict-ChangeBit- DE: "\332\215+\342"-
