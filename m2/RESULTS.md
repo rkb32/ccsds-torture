@@ -97,9 +97,15 @@ Six 3600 s runs, unframed seeds (`../m1/seeds`), seeds 1–3 per arm. Script: `t
 
 ## Research follow-ups (2026-11-08, Haiku 5.5; Opus 5.5 decision check)
 - **SPD plateau (coverage verified, cause inferred).** gcov on `SpacePacketDeframer.cpp`, counts cumulative across all runs linked to this build: 55 of 61 lines executed (90.2%). Never executed: the destructor (line 21) and the deserialize-failure branch (lines 66–72). Line 54 guarantees size > 6, so the header deserialize should not fail. That branch is likely unreachable (deserializer behavior not checked). The flat 1655 is saturation of reachable code, not a mutator gap.
-- **Stall (events verified, cause inferred).** Three 1 h runs (cmp0_s1, cmp0_s2, cmp1_s1) reported ~4265 s against a 3600 s budget. Windows logged modern-standby enter/exit pairs inside the run window (IDs 506/507 at 14:32:04–14:32:26 and 15:29:11–15:29:16; ID meanings unverified). Consistent with host sleep; not proven.
+- **Stall (overrun verified, cause inferred).** All six 1 h trial runs (`trials1h/`) overran by 664–669 s (elapsed 4264–4269 s vs 3600 s). The overrun is nearly identical across the six parallel runs, which points to one shared suspend (inferred). The 1 h runs `fprime_none`, `fprime_framed`, and `fprime/run1h.log` ran at 3601 s, so they did not overrun. Windows logged modern-standby enter/exit pairs in the batch window (IDs 506/507; meanings unverified). `m2/checkbudget.sh` flags these overruns.
+- **Correction (2026-11-08).** The earlier note said three runs overran. All six did. The earlier count was wrong.
 - **Start-word origin (partly verified).** `out/fprime/smoke.log` reports "140 files found in seeds_spd" (verified). That new units were written there depends on it being the first corpus argument (unverified).
-- **Valid-frame reproducibility (not re-run).** Opus gate: more runs only if coverage does not explain the rarity. FprimeDeframer coverage not checked yet. Likely cause: the CRC-32 gate, so a hit depends on CMP learning the checksum (inferred).
+- **Valid-frame gate (per-run counts verified; mechanism inferred).** Counts from each run's own `FprimeDeframer.cpp.gcda` (line 98 = CRC check, line 110 = dataOut):
+  - CMP off (7 of 18 runs): the CRC check was never reached. The start-word gate binds.
+  - CMP on, checks but no valid CRC (6 runs, 18k–1.1M checks): `checks/red0`, `checks/red1`, `trials/cmp1_s1–s3`, `trials1h/cmp1_s1`.
+  - CMP on, valid CRC found (5 runs): `fprime_cmp1` 1,489; `trials1h/cmp1_s2` 6,297; `trials1h/cmp1_s3` 12,134; `fprime_none` 37,360; `fprime_framed` 172,682 (framed seeds).
+  - Reproducibility is therefore whether a run finds one valid CRC. Once it does, later mutations keep passing (inferred from the counts, not tested).
+  - Not re-run. The Opus gate was not cleanly met. Extra runs cost about 1 h wall-clock per batch.
 - **Public prep.** Username paths replaced with `$HOME` in 13 tracked logs (84 matches before, 0 after; verified by grep). Not committed.
 
 ## Limits

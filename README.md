@@ -1,4 +1,4 @@
-# ccsds-torture (DRAFT, not for public release)
+# ccsds-torture
 
 Robustness and fuzzing tests for CCSDS Space Packet parsers.
 
