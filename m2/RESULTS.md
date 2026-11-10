@@ -76,7 +76,9 @@ Six 3600 s runs, unframed seeds (`../m1/seeds`), seeds 1–3 per arm. Script: `t
 | cmp1_s3 | 16,704,989 | 1527 | 17 | 10 | 0 | 0 |
 
 - **Verified:** no sanitizer errors and no crashes in any run.
-- **Verified:** four runs wrote `slow-unit` files. Each input replays in about 2 s with exit 0. cmp0_s1 and cmp1_s1 reported ~4,260 s instead of 3,600 s, with slowest units of 1,503 s and 806 s. Likely a host stall or sleep (inferred, not checked).
+- **Verified (logs):** four runs wrote `slow-unit` files. All six runs reported 4,264–4,269 s instead of 3,600 s. Slowest units: 1,503 s (cmp0_s1); 806 s (cmp0_s2, cmp0_s3, cmp1_s1); cmp1_s2 and cmp1_s3 had none.
+- **Unverified:** replay time (~2 s). The replay files record only exit codes and hashes.
+- **Cause (inferred, not established):** Kernel-Power standby 15:29:11–15:42:41 on 2026-11-07 (about 810 s) ends 4 s before the cmp0 batch finished and is close to the 806 s figure. No standby falls in the cmp1 batch window (about 18:08–19:19 on 2026-11-08), so host sleep does not explain all six.
 - **Start word:** replicated. cmp0 0 of 3 runs; cmp1 10–15 files per run.
 - **Valid frame:** cmp1 1 of 3 runs (cmp1_s2, one file). cmp0 0 of 3.
 - **Pooled, unframed seeds:** valid frames in 3 of 8 comparison-on runs (`fprime_none`, `fprime_cmp1`, and cmp1_s2 at 1 h) and 0 of 7 comparison-off runs. Exact one-sided p ≈ 0.12. Suggestive only; the counts are small.
@@ -131,6 +133,11 @@ Six 3600 s runs, unframed seeds (`../m1/seeds`), seeds 1–3 per arm. Script: `t
 - Determinism: same-seed status lines diverge from the original runs by the first pulse (#65536: ft 1108 vs 1109) and differ from #131072 on. So the same seed does not reproduce the same trajectory here (verified by log comparison; cause unverified). The 11 s units therefore could not be tested against the same inputs.
 - The original 2026-11-09 slow-unit runs had no heartbeat log, so the stall hypothesis cannot be checked against them.
 - Conclusion: the 11 s slow units did not recur, and this hour showed no stall. The cause of the original units remains unverified.
+
+## Determinism and slow-unit replay (2026-11-09, Haiku 5.5)
+- Same seed (7), 300k runs, two runs per arm. ASLR on: the two runs differ at the first pulse (#65536 cov 1085 vs 1084) and later. ASLR off (`setarch -R`): the two runs are identical at #65536, #131072, and #262144 (verified; small sample).
+- Slow-unit replay: each 11 s input replayed 20 times per arm, each in a fresh process. Two replay runs, 20 per arm each. Run 1 max 155 ms. Run 2 max 90 ms (ASLR on, `c78e37`); run 2 per arm: `c460162` 63 ms on / 34 ms off, `c78e37` 90 ms on / 49 ms off. No replay came near 11 s in either run (verified for run 2; run 1 per-arm split not re-checked).
+- So the 11 s time does not come from a fresh process on these inputs. The cause is still unverified; it may depend on state in the long-running process. An ASLR-off hour run would test that, at 1 h per run.
 
 ## Limits
 - SPD coverage was flat at 1655 from exec 150 to 46M. The mutator adds no new branches, so either the seeds already cover them or most inputs stop at early checks. Medium confidence. A 2-min value-profile test gave no gain (see Checks). Cause still untested.
