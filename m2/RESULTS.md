@@ -96,10 +96,10 @@ Six 3600 s runs, unframed seeds (`../m1/seeds`), seeds 1–3 per arm. Script: `t
 - **Verified:** value profile gives no coverage gain in 120 s. It ran about 16x fewer execs. Not a fair speed comparison, but it doesn't break the plateau.
 
 ## Research follow-ups (2026-11-08, Haiku 5.5; Opus 5.5 decision check)
-- **SPD plateau (coverage verified, cause inferred).** gcov on `SpacePacketDeframer.cpp`, counts cumulative across all runs linked to this build: 55 of 61 lines executed (90.2%). Never executed: the destructor (line 21) and the deserialize-failure branch (lines 66–72). Line 54 guarantees size > 6, so the header deserialize should not fail. That branch is likely unreachable (deserializer behavior not checked). The flat 1655 is saturation of reachable code, not a mutator gap.
-- **Stall (overrun verified, cause inferred).** All six 1 h trial runs (`trials1h/`) overran by 664–669 s (elapsed 4264–4269 s vs 3600 s). The overrun is nearly identical across the six parallel runs, which points to one shared suspend (inferred). The 1 h runs `fprime_none`, `fprime_framed`, and `fprime/run1h.log` ran at 3601 s, so they did not overrun. Windows logged modern-standby enter/exit pairs in the batch window (IDs 506/507; meanings unverified). `m2/checkbudget.sh` flags these overruns.
+- **SPD plateau (coverage verified, cause inferred).** gcov on `SpacePacketDeframer.cpp`, counts cumulative across all runs linked to this build: 55 of 61 lines executed (90.2%). Never executed: the destructor (line 21) and the deserialize-failure branch (lines 66–72). Line 54 guarantees size > 6. The header is three U16 reads, and each read fails only when fewer than 2 bytes remain (source read: `Fw/Types/Serializable.cpp` 310–330; fresh deserializer at offset 0: `Serializable.cpp:41`, `Buffer.cpp:165`). So lines 66–72 cannot run from `dataIn` (verified by source reading; not tested). The flat 1655 is saturation of reachable code, not a mutator gap.
+- **Stall (overrun verified, cause inferred).** All six 1 h trial runs (`trials1h/`) overran by 664–669 s (elapsed 4264–4269 s vs 3600 s). The overrun is nearly identical across the six parallel runs, which points to one shared suspend (inferred). The 1 h runs `fprime_none`, `fprime_framed`, and `fprime/run1h.log` ran at 3601 s, so they did not overrun. Kernel-Power 506 ("entering Modern Standby") and 507 ("exiting Modern Standby") are verified by message text. They do not explain the overruns. The repeat batch had a standby from 09:47:11 to 10:08:46 inside a window where all six runs reported exactly 3601 s (window = log mtime minus 3601 s; mtime-as-end is assumed). So standby alone does not cause overrun. Cause unverified. `m2/checkbudget.sh` flags these overruns.
 - **Correction (2026-11-08).** The earlier note said three runs overran. All six did. The earlier count was wrong.
-- **Start-word origin (partly verified).** `out/fprime/smoke.log` reports "140 files found in seeds_spd" (verified). That new units were written there depends on it being the first corpus argument (unverified).
+- **Start-word origin (verified by log and test).** `out/fprime/smoke.log` has one corpus line: "140 files found in seeds_spd". libFuzzer prints one line per corpus dir, including empty ones (`scratchpad/writetest/run.log`). So seeds_spd was the only corpus dir, and new units went there. Write-target test: 20,000 runs; empty dir A got 2 new files; dir B kept 125 files (libFuzzer loaded 124) with an unchanged hash. The exact smoke command is still unlogged.
 - **Valid-frame gate (per-run counts verified; mechanism inferred).** Counts from each run's own `FprimeDeframer.cpp.gcda` (line 98 = CRC check, line 110 = dataOut):
   - CMP off (7 of 18 runs): the CRC check was never reached. The start-word gate binds.
   - CMP on, checks but no valid CRC (6 runs, 18k–1.1M checks): `checks/red0`, `checks/red1`, `trials/cmp1_s1–s3`, `trials1h/cmp1_s1`.
@@ -107,6 +107,30 @@ Six 3600 s runs, unframed seeds (`../m1/seeds`), seeds 1–3 per arm. Script: `t
   - Reproducibility is therefore whether a run finds one valid CRC. Once it does, later mutations keep passing (inferred from the counts, not tested).
   - Not re-run. The Opus gate was not cleanly met. Extra runs cost about 1 h wall-clock per batch.
 - **Public prep.** Username paths replaced with `$HOME` in 13 tracked logs (84 matches before, 0 after; verified by grep). Not committed.
+
+## Repeat CMP-on 1 h trials, seeds 4–9 (2026-11-09, Haiku 5.5; Opus 5.5 pick A)
+- Setup: six parallel `fuzz_fprime -use_cmp=1 -max_total_time=3600`, seeds 4–9, input `m1/seeds`. Script `m2/repeat_cmp1_1h.sh` (untracked, not committed). All six ran 3601 s (`checkbudget` ok; verified).
+- No crash-* files in any run (verified by listing). The old script `crashes` column counted slow-unit files too. Fixed: `crashes` and `slow_units` are now separate (verified on these dirs: 0 crashes; 1 slow unit each in s7, s8). libFuzzer wrote one per run (s7, s8) at "Slowest unit: 11 s". Replayed once each: exit 0, 47 ms and 67 ms, no sanitizer output (verified). Cause unverified. The FPD hash loop is bounded by the 74-byte input, and `dataIn_handler` uses only locals (source read: `FprimeDeframer.cpp` 28–111). The harness tester persists across calls, but its history is cleared each call (`fuzz_fprime.cpp:44`). Power events do not match (see the stall note above).
+- Valid-frame counts (gcov counts executions; replay counts distinct inputs):
+
+| Run | Execs | Corpus files | Replay dataOut files | gcov CRC checked | gcov CRC pass | gcov dataOut |
+|---|---|---|---|---|---|---|
+| s4 | 27,073,604 | 14 | 1 | 926,195 | 80 | 80 |
+| s5 | 27,717,634 | 13 | 1 | 1,002,758 | 874 | 874 |
+| s6 | 26,731,205 | 11 | 0 | 929,513 | 0 | 0 |
+| s7 | 28,600,365 | 13 | 1 | 1,445,232 | 2,119 | 2,119 |
+| s8 | 28,872,440 | 14 | 1 | 1,519,468 | 505 | 505 |
+| s9 | 28,443,296 | 13 | 1 | 1,709,952 | 1,688 | 1,688 |
+
+- Five of six runs reached dataOut. The gcov and replay zero/non-zero pattern matches (verified). Earlier mix: 5 of 11 CMP-on runs had a valid CRC. Both are small samples, so the rate is not established.
+
+## Stall rerun, seeds 7 and 8 plus control 4, 1 h (2026-11-09, Haiku 5.5)
+- Setup: `m2/stall_test_1h.sh` (untracked). Same fuzz flags as `repeat_cmp1_1h.sh`, a wall-clock stamp on every log line, and a 1 Hz heartbeat. Three parallel runs, 12:07–13:08.
+- All three ran 3601 s. 0 slow units and 0 crash files (verified by logs and listing). Exec counts 42.3M–43.9M. That is above the 6-parallel batch (27–29M), so the counts are not comparable.
+- Heartbeat: no gap over 2 s across the full hour (verified with `date -f` scan). No host stall was visible during this run.
+- Determinism: same-seed status lines diverge from the original runs by the first pulse (#65536: ft 1108 vs 1109) and differ from #131072 on. So the same seed does not reproduce the same trajectory here (verified by log comparison; cause unverified). The 11 s units therefore could not be tested against the same inputs.
+- The original 2026-11-09 slow-unit runs had no heartbeat log, so the stall hypothesis cannot be checked against them.
+- Conclusion: the 11 s slow units did not recur, and this hour showed no stall. The cause of the original units remains unverified.
 
 ## Limits
 - SPD coverage was flat at 1655 from exec 150 to 46M. The mutator adds no new branches, so either the seeds already cover them or most inputs stop at early checks. Medium confidence. A 2-min value-profile test gave no gain (see Checks). Cause still untested.

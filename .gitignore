@@ -27,3 +27,7 @@ m2/out/**/*.gcno
 m2/out/fprime/build_replay.log
 m2/out/fprime/debug_one.log
 m2/out/fprime/ninja_objects.log
+
+# 1 h repeat and stall run logs (numbers are recorded in m2/RESULTS.md).
+m2/out/repeat1h/
+m2/out/stall1h/
