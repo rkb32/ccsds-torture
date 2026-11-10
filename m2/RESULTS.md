@@ -137,7 +137,17 @@ Six 3600 s runs, unframed seeds (`../m1/seeds`), seeds 1–3 per arm. Script: `t
 ## Determinism and slow-unit replay (2026-11-09, Haiku 5.5)
 - Same seed (7), 300k runs, two runs per arm. ASLR on: the two runs differ at the first pulse (#65536 cov 1085 vs 1084) and later. ASLR off (`setarch -R`): the two runs are identical at #65536, #131072, and #262144 (verified; small sample).
 - Slow-unit replay: each 11 s input replayed 20 times per arm, each in a fresh process. Two replay runs, 20 per arm each. Run 1 max 155 ms. Run 2 max 90 ms (ASLR on, `c78e37`); run 2 per arm: `c460162` 63 ms on / 34 ms off, `c78e37` 90 ms on / 49 ms off. No replay came near 11 s in either run (verified for run 2; run 1 per-arm split not re-checked).
-- So the 11 s time does not come from a fresh process on these inputs. The cause is still unverified; it may depend on state in the long-running process. An ASLR-off hour run would test that, at 1 h per run.
+- So the 11 s time does not come from a fresh process on these inputs. The cause is still unverified; it may depend on state in the long-running process. The ASLR-off hour run is in the next section.
+
+## One-hour ASLR-off run, seed 7 (2026-11-09, Haiku 5.5)
+- Script: `m2/aslr_1h_s7.sh` (not committed). One run, alone, `setarch -R`, `-max_total_time=3600`, same flags as the batch.
+- Result (verified in logs): exit 0; 7,296,424 execs; libFuzzer reported 11,380 s against a 3,600 s budget. Slowest units 1,788 s and 9,070 s. No 11 s unit.
+- Wall clock agrees (verified): run directory created 20:15:16, last log write 23:24:56, which is 11,380 s. So the overrun is real, not a clock error.
+- The 1,788 s unit matches a Windows standby from 20:23:47 to 20:53:40 (1,793 s, Kernel-Power 506/507, verified). Link inferred.
+- The 9,070 s unit has no matching sleep. By subtraction it starts near 20:53:46, when a sleep/resume (20:53:45–20:53:47) happened. Inferred, not verified.
+- Both inputs replayed in a fresh process: exit 0, 1.5 s and 1.7 s wall including startup (verified). The input alone is not slow.
+- Batch `cmp1_s7` (ASLR on, six runs in parallel) had 28,600,365 execs in 3,601 s and its slowest unit was 11 s. Pulses diverge at #131072 (1373 vs 1372), so this run is not the same path.
+- Cause of the long stalls: not established. A host or VM freeze fits both units better than the input, but that is unproven.
 
 ## Limits
 - SPD coverage was flat at 1655 from exec 150 to 46M. The mutator adds no new branches, so either the seeds already cover them or most inputs stop at early checks. Medium confidence. A 2-min value-profile test gave no gain (see Checks). Cause still untested.
